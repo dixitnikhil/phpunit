@@ -1,0 +1,48 @@
+{
+    "name": "rakeshf/hello-php-unit",
+    "type": "library",
+    "description": "Hello to PHPunit",
+    "keywords": ["php","phpunit","unit testing","tdd"],
+    "homepage": "https://www.php.net",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rakesh Falke",
+            "email": "rakeshfalke@gmail.com",
+            "homepage": "https://github.com/rakeshf",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/rakeshf/hello-php-unit.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HelloPHPUnit\\": "src/"
+        }
+    },
+    "require-dev": {
+      "phpunit/phpunit": "*",
+      "mockery/mockery": "^0.9.4"
+    },
+    "autoload-dev": {
+        "files": [
+            "tests/lib/Invoker.php",
+            "tests/Base.php"
+        ]
+    },
+    "scripts": {
+        "behat": "./vendor/bin/behat",
+        "unit": "./vendor/bin/phpunit -c phpunit.xml --debug",
+        "test": [
+            "@unit",
+            "@behat"
+        ]
+    },
+    "require": {
+        "behat/behat": "^3.5"
+    }
+}
